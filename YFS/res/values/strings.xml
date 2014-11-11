@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Youth For Seva</string>
+    <string name="action_settings">Settings</string>
+    <string name="APP_ID">299339163595026</string>
+    <color name="blue">#33bbbb</color>
+    <string name="Login">To get started, login using Facebook</string>
+    <color name="white">#ffffff</color>
+    <string name="heading">Youth for Seva</string>
+    <color name="green">#00fd9b</color>
+    <string name="blank"> </string>
+    <string name="logintext">Login as : </string>
+    <string name="coordinator">Coordinator</string>
+    <string name="vol">Volunteer</string>
+    <string name="watsnew">What\'s new</string>
+    <string name="findproj">Discover Projects</string>
+    <string name="category">Projects by Category</string>
+    <string name="profile">My Profile</string>
+    <string name="create">Create Project</string>
+    <string name="proj">My Projects</string>
+    <string name="childlabour">Join an event to help children rescue against child labour and spread awareness about the same. In India ...More Details</string>
+    <string name="childheading">Raise your voice against Child Labour</string>
+    <string name="womenedu">Women Education</string>
+    <string name="womenedudesc">Help us spread education among women, who are deprived of it from an early age...More Details</string>
+    <string name="domain">Domain  </string>
+    <string name="domainname">Education &amp; Health</string>
+    <string name="location">Location</string>
+    <string name="locname">Bangalore</string>
+    <string name="hours">No of Hours</string>
+    <string name="num">250</string>
+    <string name="avail">Availablity</string>
+    <string name="cat">Category</string>
+    <string name="search">Search</string>
+    
+     <string name="button_submit">Submit</string>
+    <string name="button_edit">Edit</string>
+    <string name="button_delete">Delete</string>
+    <string name="name">Name</string>
+    <string name="edit_name">ABC</string>
+    <string name="edit_category">Education</string>
+    <string name="edit_location">Electronics City</string>
+    <string name="volunteerCount">Volunteers \n Required</string>
+    <string name="volunteerCountAvailable">Volunteers \n Available</string>
+    <string name="edit_volunteerCount">10</string>
+    <string name="timing">Timings - </string>
+    <string name="button_day">Saturday</string>
+    <string name="edit_startTime">09:30 am</string>
+    <string name="edit_endTime">12:30 pm</string>
+    <string name="button_addDays">Add Day</string>
+    <string name="projectName">ABC</string>
+    <string name="projectCategory">Education</string>
+    <string name="projectLocation">Electronics City</string>
+    <string name="projectDay">Sunday</string>
+    <string name="projectstartTime">10:30 am</string>
+    <string name="projectendTime">11:30 am</string>
+    <string name="projectAvailable">8</string>
+    <string name="button_getVolunteers">Search Volunteers</string>
+    <string name="button_contactVolunteers">Message Volunteers</string>
+    <string name="button_checkindetails">Check-in Details</string>
+    <string name="button_reminders">Reminder Settings</string>
+    <string name="title_activity_create_project">CreateProject</string>
+    <string name="title_activity_main">Main</string>
+    <string name="title_activity_project_details">ProjectDetailsActivity</string>
+  
+
+</resources>

@@ -1,0 +1,106 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:layout_margin="5dp"
+  android:background="@color/blue"
+  android:gravity="center_horizontal"
+  android:orientation="vertical">
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@color/blue"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+    
+     <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:background="@color/green"
+        android:text="@string/blank" />
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green"
+        android:text="@string/blank" />
+    
+
+    <TextView
+        android:id="@+id/TextView03"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+        android:text="@string/watsnew"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="italic|bold" />
+    
+      
+    <TextView
+             android:id="@+id/TextView04"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="10dp"
+             android:gravity="center_horizontal"
+             android:text="@string/childheading"
+             android:textColor="@color/green"
+             android:textSize="30sp"
+             android:textStyle="italic|bold" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:contentDescription="@string/childlabour"
+        android:src="@drawable/childlabour" />
+    
+   
+
+         <TextView
+             android:id="@+id/TextView05"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="0dp"
+             android:text="@string/childlabour"
+             android:gravity="center_horizontal"
+             android:textColor="@color/white"
+             android:textSize="20sp"
+             android:textStyle="italic|bold" />
+    
+          <TextView
+             android:id="@+id/TextView06"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="10dp"
+             android:gravity="center_horizontal"
+             android:text="@string/womenedu"
+             android:textColor="@color/green"
+             android:textSize="30sp"
+             android:textStyle="italic|bold" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:contentDescription="@string/womenedu"
+        android:src="@drawable/womenedu" />
+
+    <TextView
+        android:id="@+id/TextView07"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/womenedudesc"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="italic|bold" />
+
+</LinearLayout>
+</ScrollView>
