@@ -13,45 +13,54 @@
         android:layout_height="wrap_content" 
         android:background="@color/green"
         android:text="@string/blank" />
-
-    <TextView
+     
+      <TextView
         android:id="@+id/TextView02"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/green"
         android:text="@string/blank" />
+     
+       <!-- Main ListView 
+		 Always give id value as list(@android:id/list)
+	-->
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:textStyle="italic" />
          
         <TextView android:layout_gravity="left"
          android:textColor="@color/green"  
         android:layout_height="wrap_content" 
         android:layout_width="wrap_content" 
-        android:layout_marginTop="30dp"
-        android:text="@string/childheading" 
+        android:layout_marginTop="30dp" 
         android:id="@+id/TextView04"
          android:textStyle="italic|bold" 
          android:textSize="30sp" />
+        
     <TextView android:layout_gravity="left"
          android:layout_height="wrap_content" 
          android:layout_width="wrap_content" 
-         android:text="@string/childlabour" 
          android:id="@+id/TextView05" 
          android:textStyle="italic|bold" 
          android:textSize="20sp" 
          android:textColor="@color/white" 
          android:layout_marginTop="0dp"/>
+    
     <TextView android:layout_gravity="left"
          android:textColor="@color/green"  
         android:layout_height="wrap_content" 
-        android:layout_width="wrap_content" 
-        android:text="@string/womenedu" 
+        android:layout_width="wrap_content"  
         android:id="@+id/TextView08"
          android:textStyle="italic|bold" 
          android:textSize="30sp" 
          android:layout_marginTop="10dp"/>
+    
     <TextView android:layout_gravity="left"
          android:layout_height="wrap_content" 
-         android:layout_width="wrap_content" 
-         android:text="@string/womenedudesc" 
+         android:layout_width="wrap_content"  
          android:id="@+id/TextView10" 
          android:textStyle="italic|bold" 
          android:textSize="20sp" 

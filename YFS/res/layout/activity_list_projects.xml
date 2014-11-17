@@ -1,6 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.view.ViewPager
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/pager"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:layout_margin="5dp"
+    android:orientation="vertical" >
+
+    <!-- Project id (pid) - will be HIDDEN - used to pass to other activity -->
+
+
+    <TextView
+        android:id="@+id/pid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:background="@color/green" />
+
+    <!-- Name Label -->
+    
+      <TextView 
+        android:id="@+id/name"
+        android:layout_gravity="left"
+        android:textColor="@color/green"  
+        android:layout_height="wrap_content" 
+        android:layout_width="wrap_content" 
+        android:textStyle="italic|bold" 
+        android:textSize="30sp" />
+    
+  <LinearLayout 
+    android:orientation="horizontal"
+    android:layout_height="wrap_content" 
+    android:layout_width="wrap_content"  >
+    
+    
+    <TextView
+         android:id="@+id/required" 
+         android:layout_height="wrap_content" 
+         android:layout_width="wrap_content"
+         android:layout_marginLeft="50dp"
+         android:textStyle="italic|bold" 
+         android:textSize="20sp" 
+         android:textColor="@color/white" 
+         android:layout_marginTop="0dp"/>
+    
+    <TextView
+         android:id="@+id/available" 
+         android:layout_height="wrap_content" 
+         android:layout_width="wrap_content"
+         android:layout_marginLeft="100dp" 
+         android:textStyle="italic|bold" 
+         android:textSize="20sp" 
+         android:textColor="@color/gren" 
+         android:layout_marginTop="0dp"/>
+    
+    <TextView
+         android:id="@+id/pending" 
+         android:layout_height="wrap_content" 
+         android:layout_width="wrap_content"
+         android:layout_marginLeft="100dp" 
+         android:textStyle="italic|bold" 
+         android:textSize="20sp" 
+         android:textColor="@color/red" 
+         android:layout_marginTop="0dp"/>
+    
+    
+    </LinearLayout>
+
+</LinearLayout>

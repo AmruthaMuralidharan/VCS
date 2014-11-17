@@ -1,6 +1,5 @@
 package com.iiitb.yfs;
 
-import java.util.Arrays;
 
 import com.facebook.Request;
 import com.facebook.Response;
@@ -8,37 +7,45 @@ import com.facebook.Session;
 import com.facebook.SessionState;
 import com.facebook.UiLifecycleHelper;
 import com.facebook.model.GraphUser;
-import com.facebook.widget.LoginButton;
+import com.facebook.widget.ProfilePictureView;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-public class LoginFragment extends Fragment {
+public class MyProfile extends Fragment{
 	
-	public static String fbemail;
+	private ProfilePictureView profilePictureView;
+	private TextView userNameView;
 	private UiLifecycleHelper uiHelper;
+	private String TAG = this.getClass().getSimpleName();
 	
-	private Session.StatusCallback statusCallback = 
-		    new SessionStatusCallback();
-	
-	@Override
 	public View onCreateView(LayoutInflater inflater, 
-	    ViewGroup container, Bundle savedInstanceState) {
-	    View view = inflater.inflate(R.layout.login,container, false);
-	    LoginButton authButton = (LoginButton) view.findViewById(R.id.authButton);
-	    authButton.setReadPermissions(Arrays.asList("public_profile","email"));
-	    
-	    Session session = Session.getActiveSession();
-	     if (session != null && session.isOpened()) {
-	         // Get the user's data
-	         makeMeRequest(session);
-	     }
-	    
-	    return view;	
-	    }
+		    ViewGroup container, Bundle savedInstanceState) {
+		    View view = inflater.inflate(R.layout.profile,container, false);
+            
+		    Log.d(TAG, "Inflated Layout");
+		    // Find the user's profile picture custom view
+		    profilePictureView = (ProfilePictureView) view.findViewById(R.id.selection_profile_pic);
+		   // profilePictureView.setCropped(true);
+		    
+		    Log.d(TAG, "Profile picture created");
+		    
+		    // Find the user's name view
+		     userNameView = (TextView) view.findViewById(R.id.selection_user_name);
+		    
+		     Session session = Session.getActiveSession();
+		     if (session != null && session.isOpened()) {
+		         // Get the user's data
+		         makeMeRequest(session);
+		     }
+		    return view;	
+		  }
+	
 	
 	public void makeMeRequest(final Session session) {
 	    // Make an API call to get user data and define a 
@@ -53,12 +60,10 @@ public class LoginFragment extends Fragment {
 	                if (user != null) {
 	                    // Set the id for the ProfilePictureView
 	                    // view that in turn displays the profile picture.
-	                 //   profilePictureView.setProfileId(user.getId());
+	                    profilePictureView.setProfileId(user.getId());
 	                    // Set the Textview's text to the user's name.
-	                   // userNameView.setText(user.getName());
-	                    
-	                    fbemail = (String)user.getProperty("email");
-	                	
+	                    userNameView.setText(user.getName());
+	                   
 	                   
 	                }
 	            }
@@ -117,26 +122,4 @@ public class LoginFragment extends Fragment {
 	    uiHelper.onDestroy();
 	}
 	
-	private void onClickLogin() {
-	    Session session = Session.getActiveSession();
-	    if (!session.isOpened() && !session.isClosed()) {
-	        session.openForRead(new Session.OpenRequest(this)
-	            .setPermissions(Arrays.asList("public_profile","email"))
-	            .setCallback(statusCallback));
-	    } else {
-	        Session.openActiveSession(getActivity(), this, true, statusCallback);
-	    }
-	}
-	
-	private class SessionStatusCallback implements Session.StatusCallback {
-		@Override
-	    public void call(Session session, SessionState sessionState, Exception e) {
-	    
-	                }
-	       
-	}
-	
-
-	
-
-	}
+}

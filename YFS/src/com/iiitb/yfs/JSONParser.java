@@ -1,4 +1,4 @@
-package com.iiitb.surveyon;
+package com.iiitb.yfs;
 
 import java.io.BufferedReader;
 import java.io.IOException;
