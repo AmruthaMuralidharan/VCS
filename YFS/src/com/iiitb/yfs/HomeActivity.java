@@ -12,14 +12,14 @@ import android.support.v4.view.ViewPager;
 public class HomeActivity extends FragmentActivity {
 	
   ViewPager Tab;
-    ProjectsTabAdapter TabAdapter;
+    HomeTabsAdapter TabAdapter;
   ActionBar actionBar;
   
     @SuppressLint("NewApi") @TargetApi(Build.VERSION_CODES.HONEYCOMB) @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_projects);
-        TabAdapter = new ProjectsTabAdapter(getSupportFragmentManager());
+        setContentView(R.layout.hometabs);
+        TabAdapter = new HomeTabsAdapter(getSupportFragmentManager());
         Tab = (ViewPager)findViewById(R.id.pager);
         Tab.setOnPageChangeListener(
                 new ViewPager.SimpleOnPageChangeListener() {
