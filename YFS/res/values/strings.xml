@@ -62,8 +62,13 @@
     <string name="title_activity_create_project">CreateProject</string>
     <string name="title_activity_main">Main</string>
     <string name="title_activity_project_details">ProjectDetailsActivity</string>
-    <color name="red">#ffff0000</color>
-    <color name="gren">#ff00ff00</color>
+    <string name="send_message">Send Message</string><color name="red">#ffff0000</color>
+    <string name="to_user">TO</string><string name="cancel">Cancel</string><color name="gren">#ff00ff00</color>
+    
+    
+    
+    <string name="send">Send</string><string name="message">Message</string>
+    
   
 
 </resources>

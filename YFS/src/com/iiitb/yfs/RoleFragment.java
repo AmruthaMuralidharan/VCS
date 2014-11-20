@@ -22,7 +22,7 @@ import android.widget.Button;
 public class RoleFragment extends Fragment implements OnClickListener
 {
 	public static int uid;
-
+	
     // JSON parser class
     JSONParser jsonParser = new JSONParser();
     
@@ -61,10 +61,9 @@ public class RoleFragment extends Fragment implements OnClickListener
 	            try {
 	                // Building Parameters
 	                List params = new ArrayList();
-	                String email = LoginFragment.fbemail;
-	                params.add(new BasicNameValuePair("email", email));
-
-	              
+	                String email = LoginFragment.fbemail;	               
+	                Log.d("Rolw Fragment", "email: " + email);
+	                params.add(new BasicNameValuePair("email", email));              
 
 	                
 	                // getting user details by making HTTP request
@@ -81,6 +80,7 @@ public class RoleFragment extends Fragment implements OnClickListener
 	                if (success == 1) {
 	                    Log.d("Login Successful!", json.toString());
 	                    Intent i = new Intent(getActivity(), HomeActivity.class);
+	                    i.putExtra("emailId", email);
 	                    startActivity(i);
 	                    return json.getString(TAG_MESSAGE);
 	                }else{

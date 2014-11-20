@@ -14,18 +14,24 @@ import org.apache.http.NameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
+import android.widget.TextView;
 import android.os.AsyncTask;
 import android.support.v4.app.ListFragment;
 import android.util.Log;
 import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Toast;
+import android.app.ListActivity;
+import android.content.Intent;
 
 
 
 public class ListProjects extends ListFragment { 
 
+	String emailID;
 
 	// Creating JSON Parser object
 	JSONParser jParser = new JSONParser();
@@ -41,17 +47,19 @@ public class ListProjects extends ListFragment {
 	// JSONArray
 	JSONArray projects = null;
 	
+	ListAdapter adapter;
 	
+	public ListProjects(String emailID){
+		this.emailID = emailID;
+	}
 	
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
-	    View view = inflater.inflate(R.layout.my_projects, null);
+	    View view = inflater.inflate(R.layout.my_projects, container, false);
 	    
 	    projList = new ArrayList<HashMap<String, String>>();
-	    new LoadProjects().execute();
-	    
-	   
+	    new LoadProjects().execute();   
 	    return view;
 
 	}
@@ -59,16 +67,10 @@ public class ListProjects extends ListFragment {
 	/**
 	 * Background Async Task to Load all product by making HTTP Request
 	 * */
-	class LoadProjects extends AsyncTask<String, String, String> {
-		
-		
-		
-		
+	class LoadProjects extends AsyncTask<String, String, String> {		
 
-		protected String doInBackground(String... args) {
-			
-			// Building Parameters
-			
+		protected String doInBackground(String... args) {			
+			// Building Parameters			
 			
 			List<NameValuePair> params = new ArrayList<NameValuePair>();
 			// getting JSON string from URL
@@ -147,11 +149,26 @@ public class ListProjects extends ListFragment {
 					/**
 					 * Updating parsed JSON data into ListView
 					 * */
-					ListAdapter adapter = new SimpleAdapter( getActivity(), projList, R.layout.activity_list_projects, 
+				 adapter = new SimpleAdapter( getActivity(), projList, R.layout.activity_list_projects, 
 							new String[] { "pname","req","pavail","pend"},
 							new int[] { R.id.name, R.id.required, R.id.available, R.id.pending });
 					// updating list view
 					setListAdapter(adapter);
+					
+					// Get listview
+			 		ListView lv = getListView();
+
+			 		lv.setOnItemClickListener(new OnItemClickListener() {
+
+			 			@Override
+			 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+			 				
+			 				// Starting new intent
+			                 Intent in = new Intent(getActivity(), ProjectDetailsActivity.class);
+			                 in.putExtra("emailId", emailID);
+			                 startActivity(in);	                
+			 			}
+			 		});
 				}
 			}); 
 

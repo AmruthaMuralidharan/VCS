@@ -6,8 +6,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 public class HomeTabsAdapter extends FragmentStatePagerAdapter {
-    public HomeTabsAdapter(FragmentManager fm) {
+	
+	String emailID;
+	
+    public HomeTabsAdapter(FragmentManager fm, String emailID) {
     super(fm);
+    this.emailID = emailID;
     // TODO Auto-generated constructor stub
   }
   @Override
@@ -19,7 +23,7 @@ public class HomeTabsAdapter extends FragmentStatePagerAdapter {
 	            
 	        case 1:
 	        	//Fragment for project details
-	        	return new ListProjects();
+	        	return new ListProjects(emailID);
 	        	
 	        }
 	    return null;
