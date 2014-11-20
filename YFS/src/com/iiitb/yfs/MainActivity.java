@@ -75,15 +75,14 @@ public class MainActivity extends FragmentActivity {
 		    new Session.StatusCallback() {
 		    @Override
 		    public void call(Session session, 
-		            SessionState state, Exception exception) {
-		    	Log.d("Here", "call");
+		            SessionState state, Exception exception) {		    	
 		        onSessionStateChange(session, state, exception);
 		    }
 		};
 	
 	
 	public void onSessionStateChange(Session session, SessionState state, Exception exception) {
-		Log.d("Here", "onSessionStateChange");
+		
 	    // Only make changes if the activity is visible
 	    if (isResumed) {
 	        FragmentManager manager = getSupportFragmentManager();
@@ -94,13 +93,11 @@ public class MainActivity extends FragmentActivity {
 	            manager.popBackStack();
 	        }
 	        
-	        if (state.isOpened()) {
-	        	Log.d("onSessionStateChange", "ROLE");
+	        if (state.isOpened()) {	        	
 	            // If the session state is open:
 	            // Show the authenticated fragment
 	            showFragment(ROLE, false);
 	        } else if (state.isClosed()) {
-	        	Log.d("onSessionStateChange", "LOGIN");
 	            // If the session state is closed:
 	            // Show the login fragment
 	            showFragment(LOGIN, false);
@@ -143,17 +140,14 @@ public class MainActivity extends FragmentActivity {
 	
 	@Override
 	protected void onResumeFragments() {
-		Log.d("Here", "onResumeFragments");
 	    super.onResumeFragments();
 	    Session session = Session.getActiveSession();
 
 	    if (session != null && session.isOpened()) {
-	    	Log.d("onSessionStateChange", "ROLE");
 	        // if the session is already open,
 	        // try to show the selection fragment
 	        showFragment(ROLE, false);
 	    } else {
-	    	Log.d("onSessionStateChange", "LOGIN");
 	        // otherwise present the splash screen
 	        // and ask the person to login.
 	        showFragment(LOGIN, false);
